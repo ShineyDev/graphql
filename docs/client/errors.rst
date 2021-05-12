@@ -4,16 +4,16 @@
 Errors
 ======
 
-.. autoclass:: ClientError
+.. autoclass:: ClientError()
     :members:
 
-.. autoclass:: ClientResponseError
+.. autoclass:: ClientResponseError()
     :members:
 
-.. autoclass:: ClientResponseHTTPError
+.. autoclass:: ClientResponseHTTPError()
     :members:
 
-.. autoclass:: ClientResponseGraphQLError
+.. autoclass:: ClientResponseGraphQLError()
     :members:
 
 
