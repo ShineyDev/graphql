@@ -72,4 +72,7 @@ rst_prolog = """
 .. |coro| replace:: This function returns a |coro_link|_.
 .. |coro_link| replace:: coroutine
 .. _coro_link: https://docs.python.org/3/library/asyncio-task.html#coroutine
+
+.. |graphql_learn| replace:: learn GraphQL
+.. _graphql_learn: https://graphql.org/learn/
 """

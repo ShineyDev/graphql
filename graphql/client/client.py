@@ -28,6 +28,10 @@ class Client:
         ----------
         document: :class:`str`
             A GraphQL document.
+
+            .. tip::
+
+                If you haven't already, you should |graphql_learn|.
         operation: :class:`str`
             The name of the operation from the document to execute.
         **variables
