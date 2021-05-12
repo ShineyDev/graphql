@@ -7,6 +7,9 @@ Errors
 .. autoclass:: ClientError
     :members:
 
+.. autoclass:: ClientResponseError
+    :members:
+
 .. autoclass:: ClientResponseHTTPError
     :members:
 
@@ -18,5 +21,6 @@ Errors
 
     Exception
      +-- ClientError
-          +-- ClientResponseHTTPError
+          +-- ClientResponseError
+               +-- ClientResponseHTTPError
                +-- ClientResponseGraphQLError
