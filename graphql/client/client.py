@@ -31,7 +31,7 @@ class Client:
 
             .. tip::
 
-                If you haven't already, you should |graphql_learn|.
+                If you haven't already, you should |graphql_learn|_.
         operation: :class:`str`
             The name of the operation from the document to execute.
         **variables
