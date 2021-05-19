@@ -39,9 +39,9 @@ class Client:
 
         Raises
         ------
-        ~graphql.client.ClientResponseHTTPError
+        ~graphql.client.errors.ClientResponseHTTPError
             Arbitrary HTTP error.
-        ~graphql.client.ClientResponseGraphQLError
+        ~graphql.client.errors.ClientResponseGraphQLError
             Arbitrary GraphQL error.
 
 
