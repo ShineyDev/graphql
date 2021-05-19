@@ -17,6 +17,9 @@ Errors
     :members:
 
 
+Hierarchy
+---------
+
 .. code-block::
 
     Exception
