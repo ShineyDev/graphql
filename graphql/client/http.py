@@ -1,6 +1,6 @@
 import aiohttp
 
-from graphql.client.errors import ClientResponseHTTPError, ClientResponseGraphQLError
+from graphql.client import ClientResponseHTTPError, ClientResponseGraphQLError
 
 
 class HTTPClient:
