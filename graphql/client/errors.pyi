@@ -7,13 +7,13 @@ class ClientError(Exception):
     message: str
 
 
-class ClientResponseHTTPError(ClientError):
-    message: str
+class ClientResponseError(ClientError):
     response: ClientResponse
+
+
+class ClientResponseHTTPError(ClientResponseError):
     data: Optional[dict]
 
 
-class ClientResponseGraphQLError(ClientResponseHTTPError):
-    message: str
-    response: ClientResponse
+class ClientResponseGraphQLError(ClientResponseError):
     data: dict
