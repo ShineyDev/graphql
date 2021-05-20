@@ -1,6 +1,6 @@
 import aiohttp
 
-from graphql.client import ClientResponseHTTPError, ClientResponseGraphQLError
+import graphql
 
 
 class HTTPClient:
@@ -59,7 +59,8 @@ class HTTPClient:
                     data = None
                     message = response.reason
 
-                raise ClientResponseHTTPError(message, response, data)
+                exc_type = graphql.client.ClientResponseHTTPError
+                raise exc_type(message, response, data)
 
             # NOTE: While the GraphQL specification does not mandate a
             #       serialization format, JSON is by far the most
@@ -98,7 +99,10 @@ class HTTPClient:
 
                     message = error["message"]
 
-                    exceptions.append(ClientResponseGraphQLError(message, response, data))
+                    exc_type = graphql.client.ClientResponseGraphQLError
+                    exc_value = exc_type(message, response, data)
+
+                    exceptions.append(exc_value)
 
                 if False:  # len(exceptions) > 1:
                     # TODO: I'm not sure I love this interface.
