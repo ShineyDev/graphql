@@ -46,28 +46,33 @@ class HTTPClient:
         #       > Your GraphQL HTTP server should handle the HTTP GET
         #         and POST methods.
 
-        async with self.session.post(self.url, json=json, **kwargs) as response:
-            if not 200 <= response.status < 300:
-                # NOTE: The GraphQL specification is not able to
-                #       mandate HTTP status, but this block is pretty
-                #       standard AFAIA.
+        try:
+            async with self.session.post(self.url, json=json, **kwargs) as response:
+                if not 200 <= response.status < 300:
+                    # NOTE: The GraphQL specification is not able to
+                    #       mandate HTTP status, but this block is pretty
+                    #       standard AFAIA.
 
-                try:
-                    data = await response.json()
-                    message = data["message"]
-                except (aiohttp.ContentTypeError, KeyError):
-                    data = None
-                    message = response.reason
+                    try:
+                        data = await response.json()
+                        message = data["message"]
+                    except (aiohttp.ContentTypeError, KeyError):
+                        data = None
+                        message = response.reason
 
-                exc_type = graphql.client.ClientResponseHTTPError
-                raise exc_type(message, response, data)
+                    exc_type = graphql.client.ClientResponseHTTPError
+                    raise exc_type(message, response, data)
 
-            # NOTE: While the GraphQL specification does not mandate a
-            #       serialization format, JSON is by far the most
-            #       common response serialization for GraphQL servers.
+                # NOTE: While the GraphQL specification does not mandate a
+                #       serialization format, JSON is by far the most
+                #       common response serialization for GraphQL servers.
 
-            data = await response.json()
-
+                data = await response.json()
+        except aiohttp.ClientResponseError as e:
+            raise graphql.client.ClientResponseError(e) from e
+        except aiohttp.ClientError as e:
+            raise graphql.client.ClientError(e) from e
+        else:
             # NOTE: The GraphQL specification mandates that the
             #       "errors" key must (and must only) exist when the
             #       operation encounters an error. The following block
@@ -110,16 +115,16 @@ class HTTPClient:
                 else:
                     raise exceptions[0]
 
-        # NOTE: The GraphQL specification mandates that the "data" key
-        #       must be present when no error is encountered.
-        #
-        #       > If the data entry in the response is not present, the
-        #         errors entry in the response must not be empty. It
-        #         must contain at least one error. The errors it
-        #         contains should indicate why no data was able to be
-        #         returned.
+            # NOTE: The GraphQL specification mandates that the "data" key
+            #       must be present when no error is encountered.
+            #
+            #       > If the data entry in the response is not present, the
+            #         errors entry in the response must not be empty. It
+            #         must contain at least one error. The errors it
+            #         contains should indicate why no data was able to be
+            #         returned.
 
-        return data["data"]
+            return data["data"]
 
 
 __all__ = [
