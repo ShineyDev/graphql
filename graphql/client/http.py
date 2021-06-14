@@ -69,9 +69,9 @@ class HTTPClient:
 
                 data = await response.json()
         except aiohttp.ClientResponseError as e:
-            raise graphql.client.ClientResponseError(e) from e
+            raise graphql.client.ClientResponseError(e.message) from e
         except aiohttp.ClientError as e:
-            raise graphql.client.ClientError(e) from e
+            raise graphql.client.ClientError(str(e)) from e
         else:
             # NOTE: The GraphQL specification mandates that the
             #       "errors" key must (and must only) exist when the
