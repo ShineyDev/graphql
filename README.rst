@@ -29,4 +29,4 @@
     <h1 align="center">ShineyDev/graphql</h1>
     <p align="center">An asynchronous Python library for interaction with GraphQL APIs.</p>
     <h6 align="center">Copyright 2021-present ShineyDev</h6>
-    <h6 align="center">This repository is not sponsored by or affiliated with The GraphQL Foundation or its affiliates. "GraphQL" is a registered trademark of The GraphQL Foundation.</h6>
+    <h6 align="center">This repository is not endorsed by or affiliated with The GraphQL Foundation or its affiliates. "GraphQL" is a registered trademark of The GraphQL Foundation.</h6>
