@@ -11,6 +11,12 @@ class HTTPClient:
         self.url = url
 
     async def request(self, __document, __operation, __variables, **kwargs):
+        # region internal
+
+        _data_validate = kwargs.pop("_data_validate", None)
+
+        # endregion
+
         json = kwargs.pop("json", None) or dict()
 
         # NOTE: The GraphQL specification is not able to mandate HTTP
@@ -112,6 +118,21 @@ class HTTPClient:
                     raise ClientResponseGraphQLErrorCollection(exceptions)
                 else:
                     raise exceptions[0]
+
+            # region internal
+
+            if _data_validate is not None:
+                exc_type, message = _data_validate(data["data"])
+
+                if exc_type is None and message is not None:
+                    exc_type = graphql.client.ClientResponseGraphQLValidationError
+                elif exc_type is not None and message is None:
+                    message = "data validation failed"
+
+                if exc_type is not None and message is not None:
+                    raise exc_type(message, response, data)
+
+            # endregion
 
             # NOTE: The GraphQL specification mandates that the "data" key
             #       must be present when no error is encountered.
