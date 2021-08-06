@@ -80,9 +80,27 @@ class ClientResponseGraphQLError(ClientResponseError):
         super().__init__(message, response)
 
 
+class ClientResponseGraphQLValidationError(ClientResponseGraphQLError):
+    """
+    Represents a GraphQL response that failed internal data validation.
+
+    Attributes
+    ----------
+    message: :class:`str`
+        The error message.
+    response: :class:`aiohttp.ClientResponse`
+        The client response.
+    data: :class:`dict`
+        The response data.
+    """
+
+    __slots__ = ()
+
+
 __all__ = [
     "ClientError",
     "ClientResponseError",
     "ClientResponseHTTPError",
     "ClientResponseGraphQLError",
+    "ClientResponseGraphQLValidationError",
 ]

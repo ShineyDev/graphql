@@ -17,3 +17,7 @@ class ClientResponseHTTPError(ClientResponseError):
 
 class ClientResponseGraphQLError(ClientResponseError):
     data: dict
+
+
+class ClientResponseGraphQLValidationError(ClientResponseGraphQLError):
+    pass
