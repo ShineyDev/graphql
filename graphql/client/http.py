@@ -10,7 +10,7 @@ class HTTPClient:
         self.session = session
         self.url = url
 
-    async def request(self, __document, __operation, __variables, **kwargs):
+    async def request(self, document_, operation_, variables_, **kwargs):
         # region internal
 
         _data_validate = kwargs.pop("_data_validate", None)
@@ -37,13 +37,13 @@ class HTTPClient:
         #         operationName is only required if multiple operations
         #         are present in the query.
 
-        json["query"] = __document
+        json["query"] = document_
 
-        if __operation:
-            json["operationName"] = __operation
+        if operation_:
+            json["operationName"] = operation_
 
-        if __variables:
-            json["variables"] = __variables
+        if variables_:
+            json["variables"] = variables_
 
         # NOTE: The GraphQL specification is not able to mandate HTTP
         #       methods, but GET and POST are the only methods
