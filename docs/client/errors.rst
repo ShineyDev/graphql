@@ -20,6 +20,10 @@ Errors
     :members:
     :exclude-members: with_traceback
 
+.. autoclass:: ClientResponseGraphQLValidationError()
+    :members:
+    :exclude-members: with_traceback
+
 
 Hierarchy
 ---------
@@ -31,3 +35,4 @@ Hierarchy
           +-- ClientResponseError
                +-- ClientResponseHTTPError
                +-- ClientResponseGraphQLError
+               +-- ClientResponseGraphQLValidationError
