@@ -43,7 +43,7 @@ Hierarchy
           +-- ClientResponseError
                +-- ClientResponseHTTPError
                +-- ClientResponseGraphQLError
-               +-- ClientResponseGraphQLValidationError
+                    +-- ClientResponseGraphQLValidationError
 
     DeprecationWarning
      +-- ClientDeprecationWarning
