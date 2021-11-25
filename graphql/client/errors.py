@@ -97,10 +97,28 @@ class ClientResponseGraphQLValidationError(ClientResponseGraphQLError):
     __slots__ = ()
 
 
+class ClientDeprecationWarning(DeprecationWarning):
+    """
+    Represents a :exc:`DeprecationWarning` from the GraphQL client.
+    """
+
+    __slots__ = ()
+
+
+class ServerDeprecationWarning(DeprecationWarning):
+    """
+    Represents a :exc:`DeprecationWarning` from the GraphQL server.
+    """
+
+    __slots__ = ()
+
+
 __all__ = [
     "ClientError",
     "ClientResponseError",
     "ClientResponseHTTPError",
     "ClientResponseGraphQLError",
     "ClientResponseGraphQLValidationError",
+    "ClientDeprecationWarning",
+    "ServerDeprecationWarning",
 ]
