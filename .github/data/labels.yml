@@ -1,0 +1,13 @@
+inherit:
+- https://raw.githubusercontent.com/ShineyDev/.github/main/data/labels/_.yml
+- https://raw.githubusercontent.com/ShineyDev/.github/main/data/labels/automation-stale.yml
+- https://raw.githubusercontent.com/ShineyDev/.github/main/data/labels/interacts-api.yml
+- https://raw.githubusercontent.com/ShineyDev/.github/main/data/labels/interacts-dependency.yml
+
+groups:
+- name: Environment
+  labels:
+  - name: client
+    description: This is related to graphql.client.
+  - name: server
+    description: This is related to graphql.server.
