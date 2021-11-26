@@ -109,9 +109,7 @@ class HTTPClient:
 
                     message = error["message"]
 
-                    exceptions.append(
-                        graphql.client.ClientResponseGraphQLError(message, response, data)
-                    )
+                    exceptions.append(graphql.client.ClientResponseGraphQLError(message, response, data))
 
                 if False:  # len(exceptions) > 1:
                     # TODO: I'm not sure I love this interface.
