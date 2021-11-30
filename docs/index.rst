@@ -1,5 +1,5 @@
-ShineyDev/graphql
-=================
+graphql
+=======
 
 An asynchronous Python library for interaction with GraphQL APIs.
 
