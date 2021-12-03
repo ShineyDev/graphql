@@ -19,7 +19,5 @@ class ClientResponseGraphQLError(ClientResponseError):
     data: dict
 
 
-class ClientResponseGraphQLValidationError(ClientResponseGraphQLError): pass
-
 class ClientDeprecationWarning(DeprecationWarning): pass
 class ServerDeprecationWarning(DeprecationWarning): pass

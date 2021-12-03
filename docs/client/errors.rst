@@ -20,10 +20,6 @@ Errors
     :members:
     :exclude-members: with_traceback
 
-.. autoclass:: ClientResponseGraphQLValidationError()
-    :members:
-    :exclude-members: with_traceback
-
 .. autoclass:: ClientDeprecationWarning()
     :inherited-members:
     :exclude-members: with_traceback
@@ -43,7 +39,6 @@ Hierarchy
           +-- ClientResponseError
                +-- ClientResponseHTTPError
                +-- ClientResponseGraphQLError
-                    +-- ClientResponseGraphQLValidationError
 
     DeprecationWarning
      +-- ClientDeprecationWarning

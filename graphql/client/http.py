@@ -120,15 +120,7 @@ class HTTPClient:
             # region internal
 
             if _data_validate is not None:
-                exc_type, message = _data_validate(data["data"])
-
-                if exc_type is None and message is not None:
-                    exc_type = graphql.client.ClientResponseGraphQLValidationError
-                elif exc_type is not None and message is None:
-                    message = "data validation failed"
-
-                if exc_type is not None and message is not None:
-                    raise exc_type(message, response, data)
+                _data_validate(response, data)
 
             # endregion
 
