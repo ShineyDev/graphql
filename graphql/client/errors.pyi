@@ -11,12 +11,12 @@ class ClientResponseError(ClientError):
     response: ClientResponse
 
 
-class ClientResponseHTTPError(ClientResponseError):
-    data: Optional[dict]
-
-
 class ClientResponseGraphQLError(ClientResponseError):
     data: dict
+
+
+class ClientResponseHTTPError(ClientResponseError):
+    data: Optional[dict]
 
 
 class ClientDeprecationWarning(DeprecationWarning): pass

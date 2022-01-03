@@ -12,11 +12,11 @@ Errors
     :members:
     :exclude-members: with_traceback
 
-.. autoclass:: ClientResponseHTTPError()
+.. autoclass:: ClientResponseGraphQLError()
     :members:
     :exclude-members: with_traceback
 
-.. autoclass:: ClientResponseGraphQLError()
+.. autoclass:: ClientResponseHTTPError()
     :members:
     :exclude-members: with_traceback
 
@@ -37,8 +37,8 @@ Hierarchy
     Exception
      +-- ClientError
           +-- ClientResponseError
-               +-- ClientResponseHTTPError
                +-- ClientResponseGraphQLError
+               +-- ClientResponseHTTPError
 
     DeprecationWarning
      +-- ClientDeprecationWarning

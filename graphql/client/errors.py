@@ -36,28 +36,6 @@ class ClientResponseError(ClientError):
         super().__init__(f"{response.status}: {message}")
 
 
-class ClientResponseHTTPError(ClientResponseError):
-    """
-    Represents an error in an HTTP response.
-
-    Attributes
-    ----------
-    message: :class:`str`
-        The error message.
-    response: :class:`aiohttp.ClientResponse`
-        The client response.
-    data: Optional[:class:`dict`]
-        The response data.
-    """
-
-    __slots__ = ("data",)
-
-    def __init__(self, message, response, data):
-        self.data = data
-
-        super().__init__(message, response)
-
-
 class ClientResponseGraphQLError(ClientResponseError):
     """
     Represents an error in a GraphQL response.
@@ -69,6 +47,28 @@ class ClientResponseGraphQLError(ClientResponseError):
     response: :class:`aiohttp.ClientResponse`
         The client response.
     data: :class:`dict`
+        The response data.
+    """
+
+    __slots__ = ("data",)
+
+    def __init__(self, message, response, data):
+        self.data = data
+
+        super().__init__(message, response)
+
+
+class ClientResponseHTTPError(ClientResponseError):
+    """
+    Represents an error in an HTTP response.
+
+    Attributes
+    ----------
+    message: :class:`str`
+        The error message.
+    response: :class:`aiohttp.ClientResponse`
+        The client response.
+    data: Optional[:class:`dict`]
         The response data.
     """
 
@@ -99,8 +99,8 @@ class ServerDeprecationWarning(DeprecationWarning):
 __all__ = [
     "ClientError",
     "ClientResponseError",
-    "ClientResponseHTTPError",
     "ClientResponseGraphQLError",
+    "ClientResponseHTTPError",
     "ClientDeprecationWarning",
     "ServerDeprecationWarning",
 ]
