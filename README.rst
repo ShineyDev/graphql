@@ -27,7 +27,7 @@
 .. raw:: html
 
     <h1 align="center">ShineyDev/graphql</h1>
-    <p align="center">An asynchronous Python library for interaction with GraphQL APIs.<br><a href="https://docs.shiney.dev/graphql">documentation</a> | <a href="https://github.com/ShineyDev/graphql/tree/main/examples">examples</a></p>
+    <p align="center">An asynchronous Python library for interaction with GraphQL APIs.<br><a href="https://docs.shiney.dev/graphql">documentation</a></p>
 
 
 Install
