@@ -38,12 +38,19 @@ Install
     $ pip install --upgrade git+https://github.com/ShineyDev/graphql.git@main
 
 
-..  Use
-    ---
+Use
+---
 
-    .. code:: python
+.. code:: python
 
-        use is hard without an authentication-less, safe, and static api
+    >>> import aiohttp
+    >>> import graphql
+    >>>
+    >>> session = aiohttp.ClientSession()
+    >>> client = graphql.client.Client(session=session, url="https://swapi-graphql.netlify.app/.netlify/functions/index/graphql")
+    >>>
+    >>> await client.request("{allPeople(first:3){edges{node{name}}}}")
+    {'allPeople': {'edges': [{'node': {'name': 'Luke Skywalker'}}, {'node': {'name': 'C-3PO'}}, {'node': {'name': 'R2-D2'}}]}}
 
 
 .. raw:: html
