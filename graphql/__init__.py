@@ -1,6 +1,6 @@
 import collections
 
-from graphql import client
+from graphql import client as client
 
 
 __all__ = []
