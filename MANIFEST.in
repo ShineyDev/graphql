@@ -1,5 +1,4 @@
 include LICENSE
 include README.rst
-include requirements.txt
 include graphql/py.typed
 recursive-include graphql *.pyi
