@@ -6,6 +6,7 @@ if TYPE_CHECKING:
 
     from aiohttp import ClientResponse
 
+
 class ClientError(Exception):
     """
     The base exception class for the GraphQL client.
