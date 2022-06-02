@@ -1,24 +1,24 @@
 .. raw:: html
 
     <p align="center">
-        <a href="https://github.com/ShineyDev/graphql/actions?query=workflow%3AAnalyze">
-            <img alt="Analyze Status" src="https://github.com/ShineyDev/graphql/workflows/Analyze/badge.svg?event=push" />
+        <a href="https://github.com/ShineyDev/graphql/actions?query=branch%3Amain+event%3Apush+workflow%3AAnalyze">
+            <img alt="Analyze Status" src="https://github.com/ShineyDev/graphql/workflows/Analyze/badge.svg?branch=main&event=push" />
         </a>
 
-        <a href="https://github.com/ShineyDev/graphql/actions?query=workflow%3ABuild">
-            <img alt="Build Status" src="https://github.com/ShineyDev/graphql/workflows/Build/badge.svg?event=push" />
+        <a href="https://github.com/ShineyDev/graphql/actions?query=branch%3Amain+event%3Apush+workflow%3ABuild">
+            <img alt="Build Status" src="https://github.com/ShineyDev/graphql/workflows/Build/badge.svg?branch=main&event=push" />
         </a>
 
-        <a href="https://github.com/ShineyDev/graphql/actions?query=workflow%3ACheck">
-            <img alt="Check Status" src="https://github.com/ShineyDev/graphql/workflows/Check/badge.svg?event=push" />
+        <a href="https://github.com/ShineyDev/graphql/actions?query=branch%3Amain+event%3Apush+workflow%3ACheck">
+            <img alt="Check Status" src="https://github.com/ShineyDev/graphql/workflows/Check/badge.svg?branch=main&event=push" />
         </a>
 
-        <a href="https://github.com/ShineyDev/graphql/actions?query=workflow%3ADeploy">
-            <img alt="Deploy Status" src="https://github.com/ShineyDev/graphql/workflows/Deploy/badge.svg?event=push" />
+        <a href="https://github.com/ShineyDev/graphql/actions?query=branch%3Amain+event%3Apush+workflow%3ADeploy">
+            <img alt="Deploy Status" src="https://github.com/ShineyDev/graphql/workflows/Deploy/badge.svg?branch=main&event=push" />
         </a>
 
-        <a href="https://github.com/ShineyDev/graphql/actions?query=workflow%3ALint">
-            <img alt="Lint Status" src="https://github.com/ShineyDev/graphql/workflows/Lint/badge.svg?event=push" />
+        <a href="https://github.com/ShineyDev/graphql/actions?query=branch%3Amain+event%3Apush+workflow%3ALint">
+            <img alt="Lint Status" src="https://github.com/ShineyDev/graphql/workflows/Lint/badge.svg?branch=main&event=push" />
         </a>
     </p>
 
@@ -35,7 +35,7 @@ Install
 
 .. code:: shell
 
-    $ pip install --upgrade git+https://github.com/ShineyDev/graphql.git@main
+    $ python -m pip install --upgrade git+https://github.com/ShineyDev/graphql.git@main
 
 
 Use
