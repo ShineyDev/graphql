@@ -1,3 +1,11 @@
+from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from typing_extensions import Self
+
+    from aiohttp import ClientResponse
+
 class ClientError(Exception):
     """
     The base exception class for the GraphQL client.
@@ -10,7 +18,10 @@ class ClientError(Exception):
 
     __slots__ = ("message",)
 
-    def __init__(self, message):
+    def __init__(
+        self: Self,
+        message: str,
+    ) -> None:
         self.message = message
 
         super().__init__(message)
@@ -30,7 +41,11 @@ class ClientResponseError(ClientError):
 
     __slots__ = ("response",)
 
-    def __init__(self, message, response):
+    def __init__(
+        self: Self,
+        message: str,
+        response: ClientResponse,
+    ) -> None:
         self.response = response
 
         super().__init__(f"{response.status}: {message}")
@@ -52,7 +67,12 @@ class ClientResponseGraphQLError(ClientResponseError):
 
     __slots__ = ("data",)
 
-    def __init__(self, message, response, data):
+    def __init__(
+        self: Self,
+        message: str,
+        response: ClientResponse,
+        data: dict,
+    ) -> None:
         self.data = data
 
         super().__init__(message, response)
@@ -74,7 +94,12 @@ class ClientResponseHTTPError(ClientResponseError):
 
     __slots__ = ("data",)
 
-    def __init__(self, message, response, data):
+    def __init__(
+        self: Self,
+        message: str,
+        response: ClientResponse,
+        data: dict | None,
+    ) -> None:
         self.data = data
 
         super().__init__(message, response)

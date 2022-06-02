@@ -1,3 +1,12 @@
+from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from typing import Any
+    from typing_extensions import Self
+
+    from aiohttp import ClientSession
+
 import aiohttp
 
 import graphql
@@ -6,11 +15,21 @@ import graphql
 class HTTPClient:
     __slots__ = ("session", "url")
 
-    def __init__(self, session, url):
+    def __init__(
+        self: Self,
+        session: ClientSession,
+        url: str,
+    ) -> None:
         self.session = session
         self.url = url
 
-    async def request(self, document_, operation_, variables_, **kwargs):
+    async def request(
+        self: Self,
+        document_: str,
+        operation_: str,
+        variables_: dict[str, Any],
+        **kwargs: Any,
+    ) -> dict:
         # region internal
 
         _data_validate = kwargs.pop("_data_validate", None)

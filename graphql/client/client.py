@@ -1,3 +1,12 @@
+from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from typing import Any
+    from typing_extensions import Self
+
+    from aiohttp import ClientSession
+
 from .http import HTTPClient
 
 
@@ -15,10 +24,20 @@ class Client:
 
     __slots__ = ("_http",)
 
-    def __init__(self, *, session, url):
+    def __init__(
+        self: Self,
+        *,
+        session: ClientSession,
+        url: str,
+    ) -> None:
         self._http = HTTPClient(session, url)
 
-    async def request(self, document, operation=None, **variables):
+    async def request(
+        self: Self,
+        document: str,
+        operation: str = None,
+        **variables: Any,
+    ) -> dict:
         """
         |coro|
 
