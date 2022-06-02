@@ -6,7 +6,7 @@ from graphql.client.http import *
 from graphql.client.http import __all__ as _http__all__
 
 
-__all__ = [
+__all__ = [  # pyright: ignore[reportUnsupportedDunderAll]
     *_client__all__,
     *_errors__all__,
     *_http__all__,

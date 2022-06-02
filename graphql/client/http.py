@@ -26,8 +26,8 @@ class HTTPClient:
     async def request(
         self: Self,
         document_: str,
-        operation_: str,
-        variables_: dict[str, Any],
+        operation_: str | None,
+        variables_: dict[str, Any] | None,
         **kwargs: Any,
     ) -> dict:
         # region internal
@@ -93,7 +93,7 @@ class HTTPClient:
 
                 data = await response.json()
         except aiohttp.ClientResponseError as e:
-            raise graphql.client.ClientResponseError(e.message) from e
+            raise graphql.client.ClientResponseError(e.message, response) from e
         except aiohttp.ClientError as e:
             raise graphql.client.ClientError(str(e)) from e
         else:

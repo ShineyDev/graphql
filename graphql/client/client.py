@@ -35,7 +35,7 @@ class Client:
     async def request(
         self: Self,
         document: str,
-        operation: str = None,
+        operation: str | None = None,
         **variables: Any,
     ) -> dict:
         """
