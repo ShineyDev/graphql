@@ -1,5 +1,6 @@
-import re
 import setuptools
+
+import re
 
 
 with open("docs/requirements.txt", "r") as stream:
@@ -12,12 +13,9 @@ extras_require = {
 with open("requirements.txt", "r") as stream:
     install_requires = stream.read().splitlines()
 
-packages = [
-    "graphql",
-    "graphql.client",
-]
+packages = setuptools.find_packages()
 
-_version_regex = r"^version = ('|\")((?:[0-9]+\.)*[0-9]+(?:\.?([a-z]+)(?:\.?[0-9])?)?)\1$"
+_version_regex = r"^version(?:\s*:\s*str)?\s*=\s*('|\")((?:[0-9]+\.)*[0-9]+(?:\.?([a-z]+)(?:\.?[0-9])?)?)\1$"
 
 with open("graphql/__init__.py") as stream:
     match = re.search(_version_regex, stream.read(), re.MULTILINE)
@@ -50,7 +48,7 @@ setuptools.setup(
     license="Apache Software License",
     name="graphql",
     packages=packages,
-    python_requires=">=3.6.0",
+    python_requires=">=3.8.0",
     url="https://github.com/ShineyDev/graphql",
     version=version,
 )
