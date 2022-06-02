@@ -1,4 +1,9 @@
+import os
 import re
+import sys
+
+
+sys.path.insert(0, os.path.abspath(".."))
 
 
 author = "ShineyDev"
@@ -6,7 +11,7 @@ project = "graphql"
 
 copyright = f"2021-present, {author}"
 
-_version_regex = r"^version = ('|\")((?:[0-9]+\.)*[0-9]+(?:\.?([a-z]+)(?:\.?[0-9])?)?)\1$"
+_version_regex = r"^version(?:\s*:\s*str)?\s*=\s*('|\")((?:[0-9]+\.)*[0-9]+(?:\.?([a-z]+)(?:\.?[0-9])?)?)\1$"
 
 with open("../graphql/__init__.py") as stream:
     match = re.search(_version_regex, stream.read(), re.MULTILINE)
@@ -64,6 +69,10 @@ rst_prolog = """
 
 .. |graphql_learn| replace:: learn GraphQL
 .. _graphql_learn: https://graphql.org/learn/
+
+.. |semver| replace:: |semver_link|_
+.. |semver_link| replace:: semantic versioning
+.. _semver_link: https://semver.org/
 """
 source_suffix = ".rst"
 

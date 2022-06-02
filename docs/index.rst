@@ -5,11 +5,18 @@ An asynchronous Python library for interaction with GraphQL APIs.
 
 
 .. toctree::
-    :caption: Client
+    :caption: Reference
+    :maxdepth: 2
+
+    reference/graphql/client/index
+    reference/glossary
+
+.. toctree::
+    :caption: Project
     :maxdepth: 1
 
-    client/client
-    client/errors
+    meta/implementation
+    meta/versioning
 
 
 Still can't find what you're looking for?
