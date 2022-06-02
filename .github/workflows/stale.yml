@@ -13,7 +13,7 @@ env:
 
 jobs:
   stale:
-    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    if: github.repository_owner == 'ShineyDev' && ( github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' )
 
     name: Mark as stale
     runs-on: ubuntu-latest
@@ -42,7 +42,7 @@ jobs:
           If you believe the pull request will continue to be inactive but should remain open, add the `A:backlog` label.
 
   unstale:
-    if: github.event_name == 'issue_comment' && contains(github.event.issue.labels.*.name, 'A:stale') && github.event.issue.user.type != 'Bot'
+    if: github.repository_owner == 'ShineyDev' && github.event_name == 'issue_comment' && contains(github.event.issue.labels.*.name, 'A:stale') && github.event.issue.user.type != 'Bot'
 
     name: Unmark as stale
     runs-on: ubuntu-latest
