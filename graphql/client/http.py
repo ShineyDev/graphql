@@ -78,13 +78,15 @@ class HTTPClient:
                     #       mandate HTTP status, but this block is pretty
                     #       standard AFAIA.
 
+                    message: str
+
                     try:
                         data = await response.json()
                         message = data["message"]
                     except (aiohttp.ContentTypeError, KeyError):
                         data = None
-                        message: str = response.reason
-
+                        message = response.reason  # type: ignore
+                        
                     raise graphql.client.ClientResponseHTTPError(message, response, data)
 
                 # NOTE: While the GraphQL specification does not mandate a
