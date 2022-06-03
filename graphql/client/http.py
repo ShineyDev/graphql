@@ -86,7 +86,7 @@ class HTTPClient:
                     except (aiohttp.ContentTypeError, KeyError):
                         data = None
                         message = response.reason  # type: ignore
-                        
+
                     raise graphql.client.ClientResponseHTTPError(message, response, data)
 
                 # NOTE: While the GraphQL specification does not mandate a
