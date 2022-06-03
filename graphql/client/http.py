@@ -83,7 +83,7 @@ class HTTPClient:
                         message = data["message"]
                     except (aiohttp.ContentTypeError, KeyError):
                         data = None
-                        message = response.reason  # type: ignore
+                        message: str = response.reason
 
                     raise graphql.client.ClientResponseHTTPError(message, response, data)
 
