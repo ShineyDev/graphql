@@ -37,7 +37,7 @@ class Client:
         document: str,
         operation: str | None = None,
         **variables: Any,
-    ) -> dict:
+    ) -> dict[str, Any]:
         """
         |coro|
 

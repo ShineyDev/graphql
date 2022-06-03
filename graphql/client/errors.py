@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+    from typing import Any
     from typing_extensions import Self
 
     from aiohttp import ClientResponse
@@ -23,7 +24,7 @@ class ClientError(Exception):
         self: Self,
         message: str,
     ) -> None:
-        self.message = message
+        self.message: str = message
 
         super().__init__(message)
 
@@ -47,7 +48,7 @@ class ClientResponseError(ClientError):
         message: str,
         response: ClientResponse,
     ) -> None:
-        self.response = response
+        self.response: ClientResponse = response
 
         super().__init__(f"{response.status}: {message}")
 
@@ -72,9 +73,9 @@ class ClientResponseGraphQLError(ClientResponseError):
         self: Self,
         message: str,
         response: ClientResponse,
-        data: dict,
+        data: dict[str, Any],
     ) -> None:
-        self.data = data
+        self.data: dict[str, Any] = data
 
         super().__init__(message, response)
 
@@ -99,9 +100,9 @@ class ClientResponseHTTPError(ClientResponseError):
         self: Self,
         message: str,
         response: ClientResponse,
-        data: dict | None,
+        data: dict[str, Any] | None,
     ) -> None:
-        self.data = data
+        self.data: dict[str, Any] = data
 
         super().__init__(message, response)
 

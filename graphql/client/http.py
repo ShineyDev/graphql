@@ -20,8 +20,8 @@ class HTTPClient:
         session: ClientSession,
         url: str,
     ) -> None:
-        self.session = session
-        self.url = url
+        self.session: ClientSession = session
+        self.url: str = url
 
     async def request(
         self: Self,
@@ -29,7 +29,7 @@ class HTTPClient:
         operation_: str | None,
         variables_: dict[str, Any] | None,
         **kwargs: Any,
-    ) -> dict:
+    ) -> dict[str, Any]:
         # region internal
 
         _data_validate = kwargs.pop("_data_validate", None)
