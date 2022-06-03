@@ -102,7 +102,7 @@ class ClientResponseHTTPError(ClientResponseError):
         response: ClientResponse,
         data: dict[str, Any] | None,
     ) -> None:
-        self.data: dict[str, Any] = data
+        self.data: dict[str, Any] | None = data
 
         super().__init__(message, response)
 
