@@ -109,7 +109,7 @@ class ClientResponseHTTPError(ClientResponseError):
 
 class ClientDeprecationWarning(DeprecationWarning):
     """
-    Represents a :exc:`DeprecationWarning` from the GraphQL client.
+    Represents a :exc:`deprecation warning <DeprecationWarning>` from the GraphQL client.
     """
 
     __slots__ = ()
@@ -117,7 +117,7 @@ class ClientDeprecationWarning(DeprecationWarning):
 
 class ServerDeprecationWarning(DeprecationWarning):
     """
-    Represents a :exc:`DeprecationWarning` from the GraphQL server.
+    Represents a :exc:`deprecation warning <DeprecationWarning>` from the GraphQL server.
     """
 
     __slots__ = ()
