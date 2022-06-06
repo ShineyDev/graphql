@@ -1,4 +1,4 @@
-.. currentmodule:: graphql.client.errors
+.. currentmodule:: graphql.client
 
 
 Errors
