@@ -12,7 +12,7 @@ from .http import HTTPClient
 
 class Client:
     """
-    The base class for interaction with a GraphQL API.
+    The base class for interaction with a GraphQL server.
 
     Parameters
     ----------
@@ -41,7 +41,7 @@ class Client:
         """
         |coro|
 
-        Sends a request to a GraphQL API.
+        Sends a request to a GraphQL server.
 
         Parameters
         ----------
@@ -53,14 +53,14 @@ class Client:
                 If you haven't already, you should |graphql_learn|_.
         operation: :class:`str`
             The name of the operation from the document to execute.
-        **variables
+        **variables: Any
             A mapping of GraphQL variables.
 
         Raises
         ------
-        ~graphql.client.errors.ClientResponseHTTPError
+        ~graphql.client.ClientResponseHTTPError
             Arbitrary HTTP error.
-        ~graphql.client.errors.ClientResponseGraphQLError
+        ~graphql.client.ClientResponseGraphQLError
             Arbitrary GraphQL error.
 
 
