@@ -7,7 +7,7 @@ if TYPE_CHECKING:
 
     from aiohttp import ClientSession
 
-from .http import HTTPClient
+from graphql.client.http import HTTPClient
 
 
 class Client:
