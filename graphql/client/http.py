@@ -17,6 +17,7 @@ class HTTPClient:
 
     def __init__(
         self: Self,
+        /,
         session: ClientSession,
         url: str,
     ) -> None:
@@ -28,6 +29,7 @@ class HTTPClient:
         document_: str,
         operation_: str | None,
         variables_: dict[str, Any] | None,
+        /,
         **kwargs: Any,
     ) -> dict[str, Any]:
         # region internal
