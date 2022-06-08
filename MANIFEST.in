@@ -1,4 +1,3 @@
 include LICENSE
 include README.rst
 include graphql/py.typed
-recursive-include graphql *.pyi
