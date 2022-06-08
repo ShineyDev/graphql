@@ -52,7 +52,7 @@ class Client:
 
             .. tip::
 
-                If you haven't already, you should |graphql_learn|_.
+                If you haven't already, you should |graphql_learn|.
         operation_: :class:`str`
             The name of the operation from the document to execute.
         **variables: Any

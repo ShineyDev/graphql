@@ -67,8 +67,9 @@ rst_prolog = """
 .. |coro_link| replace:: coroutine
 .. _coro_link: https://docs.python.org/3/library/asyncio-task.html#coroutine
 
-.. |graphql_learn| replace:: learn GraphQL
-.. _graphql_learn: https://graphql.org/learn/
+.. |graphql_learn| replace:: |graphql_learn_link|_
+.. |graphql_learn_link| replace:: learn GraphQL
+.. _graphql_learn_link: https://graphql.org/learn
 
 .. |semver| replace:: |semver_link|_
 .. |semver_link| replace:: semantic versioning
