@@ -12,7 +12,7 @@ from graphql.client.http import HTTPClient
 
 class Client:
     """
-    The base class for interaction with a GraphQL server.
+    The base class for a GraphQL client.
 
     Parameters
     ----------
