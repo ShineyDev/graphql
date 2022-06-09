@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 
 class ClientError(Exception):
     """
-    The base exception class for the GraphQL client.
+    The base exception class for a GraphQL client.
 
     Attributes
     ----------
