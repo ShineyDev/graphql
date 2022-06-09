@@ -61,9 +61,9 @@ class Client:
         Raises
         ------
         ~graphql.client.ClientResponseHTTPError
-            Arbitrary HTTP error.
+            An arbitrary HTTP error.
         ~graphql.client.ClientResponseGraphQLError
-            Arbitrary GraphQL error.
+            An arbitrary GraphQL error.
 
 
         :rtype: :class:`dict`
