@@ -5,7 +5,7 @@ inherit:
 - https://raw.githubusercontent.com/ShineyDev/.github/main/data/labels/interact-dependency.yml
 
 groups:
-- name: Environment
+- name: Domain
   labels:
   - name: client
     description: This is related to graphql.client.
