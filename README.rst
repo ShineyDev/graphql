@@ -1,24 +1,24 @@
 .. raw:: html
 
     <p align="center">
-        <a href="https://github.com/ShineyDev/graphql/actions?query=branch%3Amain+event%3Apush+workflow%3AAnalyze">
-            <img alt="Analyze Status" src="https://github.com/ShineyDev/graphql/workflows/Analyze/badge.svg?branch=main&event=push" />
+        <a href="https://github.com/ShineyDev/graphql/actions/workflows/analyze.yml?query=branch%3Amain+event%3Apush+is%3Acompleted">
+            <img alt="Analyze Status" src="https://github.com/ShineyDev/graphql/actions/workflows/analyze.yml/badge.svg?branch=main&event=push" />
         </a>
 
-        <a href="https://github.com/ShineyDev/graphql/actions?query=branch%3Amain+event%3Apush+workflow%3ABuild">
-            <img alt="Build Status" src="https://github.com/ShineyDev/graphql/workflows/Build/badge.svg?branch=main&event=push" />
+        <a href="https://github.com/ShineyDev/graphql/actions/workflows/build.yml?query=branch%3Amain+event%3Apush+is%3Acompleted">
+            <img alt="Build Status" src="https://github.com/ShineyDev/graphql/actions/workflows/build.yml/badge.svg?branch=main&event=push" />
         </a>
 
-        <a href="https://github.com/ShineyDev/graphql/actions?query=branch%3Amain+event%3Apush+workflow%3ACheck">
-            <img alt="Check Status" src="https://github.com/ShineyDev/graphql/workflows/Check/badge.svg?branch=main&event=push" />
+        <a href="https://github.com/ShineyDev/graphql/actions/workflows/check.yml?query=branch%3Amain+event%3Apush+is%3Acompleted">
+            <img alt="Check Status" src="https://github.com/ShineyDev/graphql/actions/workflows/check.yml/badge.svg?branch=main&event=push" />
         </a>
 
-        <a href="https://github.com/ShineyDev/graphql/actions?query=branch%3Amain+event%3Apush+workflow%3ADeploy">
-            <img alt="Deploy Status" src="https://github.com/ShineyDev/graphql/workflows/Deploy/badge.svg?branch=main&event=push" />
+        <a href="https://github.com/ShineyDev/graphql/actions/workflows/deploy.yml?query=branch%3Amain+event%3Apush+is%3Acompleted">
+            <img alt="Deploy Status" src="https://github.com/ShineyDev/graphql/actions/workflows/deploy.yml/badge.svg?branch=main&event=push" />
         </a>
 
-        <a href="https://github.com/ShineyDev/graphql/actions?query=branch%3Amain+event%3Apush+workflow%3ALint">
-            <img alt="Lint Status" src="https://github.com/ShineyDev/graphql/workflows/Lint/badge.svg?branch=main&event=push" />
+        <a href="https://github.com/ShineyDev/graphql/actions/workflows/lint.yml?query=branch%3Amain+event%3Apush+is%3Acompleted">
+            <img alt="Lint Status" src="https://github.com/ShineyDev/graphql/actions/workflows/lint.yml/badge.svg?branch=main&event=push" />
         </a>
     </p>
 
