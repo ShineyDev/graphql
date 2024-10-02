@@ -16,4 +16,8 @@ version: str = "0.1.0a"
 version_info: _VersionInfo = _VersionInfo(0, 1, 0, "alpha", 0)
 
 
-__all__ = []
+__all__ = [
+    "client",
+    "version",
+    "version_info",
+]
