@@ -97,7 +97,7 @@ class HTTPClient:
 
                 data = await response.json()
         except aiohttp.ClientResponseError as e:
-            raise graphql.client.ClientResponseError(e.message, response) from e  # pyright: ignore[reportUnboundVariable]
+            raise graphql.client.ClientResponseError(e.message, response) from e  # pyright: ignore[reportPossiblyUnboundVariable]
         except aiohttp.ClientError as e:
             raise graphql.client.ClientError(str(e)) from e
         else:
