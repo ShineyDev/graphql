@@ -38,7 +38,7 @@ class HTTPClient:
 
         # endregion
 
-        json = kwargs.pop("json", None) or dict()
+        json: dict[str, Any] = kwargs.pop("json", None) or dict()
 
         # NOTE: The GraphQL specification is not able to mandate HTTP
         #       parameters, but the following is described as standard
@@ -118,7 +118,7 @@ class HTTPClient:
                 errors = None
 
             if errors:
-                exceptions = list()
+                exceptions: list[Exception] = list()
 
                 for error in errors:
                     # NOTE: The GraphQL specification mandates that
