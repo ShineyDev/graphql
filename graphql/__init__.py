@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import NamedTuple
 
-from graphql import client
+from graphql import client as client
 
 
 class _VersionInfo(NamedTuple):
